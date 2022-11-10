@@ -62,15 +62,61 @@ class _homeState extends State<home> {
               children: [
                 SizedBox(width: 20),
                 InkWell(
-                  onTap: () {
-                    Permission.location.request();
+                  onTap: () async {
+                    PermissionStatus res = await Permission.location.request();
+                    setState(() {
+                      if (res == PermissionStatus.granted) {
+                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                            content: Text("Location is granted"),
+                            backgroundColor: Colors.green,
+                            behavior: SnackBarBehavior.floating));
+                      } else if (res == PermissionStatus.permanentlyDenied) {
+                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                            content: Text("Location is permanentlyDenied"),
+                            backgroundColor: Colors.redAccent,
+                            behavior: SnackBarBehavior.floating));
+                      } else if (res == PermissionStatus.denied) {
+                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                            content: Text("Location is denied"),
+                            backgroundColor: Colors.redAccent,
+                            behavior: SnackBarBehavior.floating));
+                      } else if (res == PermissionStatus.restricted) {
+                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                            content: Text("Location is restricted"),
+                            backgroundColor: Colors.redAccent,
+                            behavior: SnackBarBehavior.floating));
+                      }
+                    });
                   },
                   child: permission(name: "location"),
                 ),
                 SizedBox(width: 10),
                 InkWell(
-                  onTap: () {
-                    Permission.phone.request();
+                  onTap: () async {
+                    PermissionStatus res = await Permission.phone.request();
+                    setState(() {
+                      if (res == PermissionStatus.granted) {
+                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                            content: Text("Location is granted"),
+                            backgroundColor: Colors.green,
+                            behavior: SnackBarBehavior.floating));
+                      } else if (res == PermissionStatus.permanentlyDenied) {
+                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                            content: Text("Location is permanentlyDenied"),
+                            backgroundColor: Colors.redAccent,
+                            behavior: SnackBarBehavior.floating));
+                      } else if (res == PermissionStatus.denied) {
+                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                            content: Text("Location is denied"),
+                            backgroundColor: Colors.redAccent,
+                            behavior: SnackBarBehavior.floating));
+                      } else if (res == PermissionStatus.restricted) {
+                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                            content: Text("Location is restricted"),
+                            backgroundColor: Colors.redAccent,
+                            behavior: SnackBarBehavior.floating));
+                      }
+                    });
                   },
                   child: permission(name: "phone"),
                 ),
@@ -82,15 +128,61 @@ class _homeState extends State<home> {
               children: [
                 SizedBox(width: 20),
                 InkWell(
-                  onTap: () {
-                    Permission.camera.request();
+                  onTap: () async {
+                    PermissionStatus res = await Permission.camera.request();
+                    setState(() {
+                      if (res == PermissionStatus.granted) {
+                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                            content: Text("Location is granted"),
+                            backgroundColor: Colors.green,
+                            behavior: SnackBarBehavior.floating));
+                      } else if (res == PermissionStatus.permanentlyDenied) {
+                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                            content: Text("Location is permanentlyDenied"),
+                            backgroundColor: Colors.redAccent,
+                            behavior: SnackBarBehavior.floating));
+                      } else if (res == PermissionStatus.denied) {
+                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                            content: Text("Location is denied"),
+                            backgroundColor: Colors.redAccent,
+                            behavior: SnackBarBehavior.floating));
+                      } else if (res == PermissionStatus.restricted) {
+                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                            content: Text("Location is restricted"),
+                            backgroundColor: Colors.redAccent,
+                            behavior: SnackBarBehavior.floating));
+                      }
+                    });
                   },
                   child: permission(name: "videos"),
                 ),
                 SizedBox(width: 10),
                 InkWell(
-                  onTap: () {
-                    Permission.storage.request();
+                  onTap: () async {
+                    PermissionStatus res = await Permission.storage.request();
+                    setState(() {
+                      if (res == PermissionStatus.granted) {
+                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                            content: Text("Location is granted"),
+                            backgroundColor: Colors.green,
+                            behavior: SnackBarBehavior.floating));
+                      } else if (res == PermissionStatus.permanentlyDenied) {
+                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                            content: Text("Location is permanentlyDenied"),
+                            backgroundColor: Colors.redAccent,
+                            behavior: SnackBarBehavior.floating));
+                      } else if (res == PermissionStatus.denied) {
+                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                            content: Text("Location is denied"),
+                            backgroundColor: Colors.redAccent,
+                            behavior: SnackBarBehavior.floating));
+                      } else if (res == PermissionStatus.restricted) {
+                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                            content: Text("Location is restricted"),
+                            backgroundColor: Colors.redAccent,
+                            behavior: SnackBarBehavior.floating));
+                      }
+                    });
                   },
                   child: permission(name: "storage"),
                 ),
@@ -102,15 +194,62 @@ class _homeState extends State<home> {
               children: [
                 SizedBox(width: 20),
                 InkWell(
-                  onTap: () {
-                    Permission.bluetoothConnect.request();
+                  onTap: () async {
+                    PermissionStatus res =
+                        await Permission.bluetoothConnect.request();
+                    setState(() {
+                      if (res == PermissionStatus.granted) {
+                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                            content: Text("Location is granted"),
+                            backgroundColor: Colors.green,
+                            behavior: SnackBarBehavior.floating));
+                      } else if (res == PermissionStatus.permanentlyDenied) {
+                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                            content: Text("Location is permanentlyDenied"),
+                            backgroundColor: Colors.redAccent,
+                            behavior: SnackBarBehavior.floating));
+                      } else if (res == PermissionStatus.denied) {
+                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                            content: Text("Location is denied"),
+                            backgroundColor: Colors.redAccent,
+                            behavior: SnackBarBehavior.floating));
+                      } else if (res == PermissionStatus.restricted) {
+                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                            content: Text("Location is restricted"),
+                            backgroundColor: Colors.redAccent,
+                            behavior: SnackBarBehavior.floating));
+                      }
+                    });
                   },
                   child: permission(name: "bluetooth"),
                 ),
                 SizedBox(width: 10),
                 InkWell(
-                  onTap: () {
-                    Permission.calendar.request();
+                  onTap: () async {
+                    PermissionStatus res = await Permission.calendar.request();
+                    setState(() {
+                      if (res == PermissionStatus.granted) {
+                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                            content: Text("Location is granted"),
+                            backgroundColor: Colors.green,
+                            behavior: SnackBarBehavior.floating));
+                      } else if (res == PermissionStatus.permanentlyDenied) {
+                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                            content: Text("Location is permanentlyDenied"),
+                            backgroundColor: Colors.redAccent,
+                            behavior: SnackBarBehavior.floating));
+                      } else if (res == PermissionStatus.denied) {
+                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                            content: Text("Location is denied"),
+                            backgroundColor: Colors.redAccent,
+                            behavior: SnackBarBehavior.floating));
+                      } else if (res == PermissionStatus.restricted) {
+                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                            content: Text("Location is restricted"),
+                            backgroundColor: Colors.redAccent,
+                            behavior: SnackBarBehavior.floating));
+                      }
+                    });
                   },
                   child: permission(name: "calendar"),
                 ),
@@ -122,15 +261,62 @@ class _homeState extends State<home> {
               children: [
                 SizedBox(width: 20),
                 InkWell(
-                  onTap: () {
-                    Permission.sms.request();
+                  onTap: () async {
+                    PermissionStatus res = await Permission.sms.request();
+                    setState(() {
+                      if (res == PermissionStatus.granted) {
+                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                            content: Text("Location is granted"),
+                            backgroundColor: Colors.green,
+                            behavior: SnackBarBehavior.floating));
+                      } else if (res == PermissionStatus.permanentlyDenied) {
+                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                            content: Text("Location is permanentlyDenied"),
+                            backgroundColor: Colors.redAccent,
+                            behavior: SnackBarBehavior.floating));
+                      } else if (res == PermissionStatus.denied) {
+                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                            content: Text("Location is denied"),
+                            backgroundColor: Colors.redAccent,
+                            behavior: SnackBarBehavior.floating));
+                      } else if (res == PermissionStatus.restricted) {
+                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                            content: Text("Location is restricted"),
+                            backgroundColor: Colors.redAccent,
+                            behavior: SnackBarBehavior.floating));
+                      }
+                    });
                   },
                   child: permission(name: "sms"),
                 ),
                 SizedBox(width: 10),
                 InkWell(
-                  onTap: () {
-                    Permission.microphone.request();
+                  onTap: () async {
+                    PermissionStatus res =
+                        await Permission.microphone.request();
+                    setState(() {
+                      if (res == PermissionStatus.granted) {
+                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                            content: Text("Location is granted"),
+                            backgroundColor: Colors.green,
+                            behavior: SnackBarBehavior.floating));
+                      } else if (res == PermissionStatus.permanentlyDenied) {
+                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                            content: Text("Location is permanentlyDenied"),
+                            backgroundColor: Colors.redAccent,
+                            behavior: SnackBarBehavior.floating));
+                      } else if (res == PermissionStatus.denied) {
+                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                            content: Text("Location is denied"),
+                            backgroundColor: Colors.redAccent,
+                            behavior: SnackBarBehavior.floating));
+                      } else if (res == PermissionStatus.restricted) {
+                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                            content: Text("Location is restricted"),
+                            backgroundColor: Colors.redAccent,
+                            behavior: SnackBarBehavior.floating));
+                      }
+                    });
                   },
                   child: permission(name: "microphone"),
                 ),
